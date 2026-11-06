@@ -6,6 +6,7 @@ The website of [Mangio](https://mangiodiary.com), a private food and water diary
 - `privacy/index.html`: the privacy policy (the app's Play listing links it)
 - `404.html`: shown by GitHub Pages for a missing page
 - `assets/`: the stylesheet, script, self-hosted fonts (Fraunces and DM Sans, SIL OFL, licences next to them), screenshots and icons
+- `assets/img/pixel9-frame.webp` and `pixel9-mask.webp`: the Pixel 9 device art from Android Studio (`plugins/android/resources/device-art-resources/pixel_9`), resized. The CSS stacks frame, screenshot, then mask; the screen rectangle comes from that folder's `layout` file.
 - `CNAME`: the custom domain. Never delete it: without it the site falls back to the github.io address.
 
 Colours come from the app's dark theme (`core/design` Theme.kt and `app/src/main/res/values/colors.xml` in the app repository); the logo is drawn from its `logo_mark` and `logo_angio` drawables.

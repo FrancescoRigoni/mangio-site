@@ -46,7 +46,7 @@
   <header class="site-header" id="top">
     <nav class="wrap nav" aria-label="Main">
       <a class="brand" href="/" aria-label="Mangio home">
-        <svg viewBox="6 10 226 76" role="img" aria-hidden="true"><use href="#wordmark"/></svg>
+        <svg viewBox="6 9 226 84" aria-hidden="true"><use href="#wordmark"/></svg>
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -74,17 +74,21 @@
             <a class="btn btn-ghost" href="#features">See how it works</a>
           </div>
           <ul class="facts">
-            <li><strong>1,235</strong><span>foods built in</span></li>
+            <li><strong>1,235</strong><span>curated foods built in</span></li>
             <li><strong>7</strong><span>national nutrient tables</span></li>
             <li><strong>0</strong><span>sign-ups needed</span></li>
           </ul>
         </div>
         <div class="hero-phones">
           <div class="phone phone-back" aria-hidden="true">
-            <img src="/assets/img/screen-stats.webp" alt="" width="720" height="1520" loading="lazy">
+            <img class="frame" src="/assets/img/pixel9-frame.webp" alt="" width="600" height="1268">
+            <img class="screen" src="/assets/img/screen-stats-90.webp" alt="" width="720" height="1616" loading="lazy">
+            <img class="mask" src="/assets/img/pixel9-mask.webp" alt="" width="541" height="1214">
           </div>
           <div class="phone phone-front">
-            <img src="/assets/img/screen-day.webp" alt="A day in Mangio: calories, carbs, protein and fat against the day's goals, water, and breakfast with corn flakes and milk." width="720" height="1520" fetchpriority="high">
+            <img class="frame" src="/assets/img/pixel9-frame.webp" alt="" width="600" height="1268">
+            <img class="screen" src="/assets/img/screen-day.webp" alt="A day in Mangio: calories, carbs, protein and fat against the day's goals, water, and breakfast with corn flakes, milk and orange juice." width="720" height="1616" fetchpriority="high">
+            <img class="mask" src="/assets/img/pixel9-mask.webp" alt="" width="541" height="1214">
           </div>
         </div>
       </div>
@@ -135,7 +139,13 @@
         <div class="features">
           <div class="phone-wrap reveal">
             <div class="phone phone-swap">
-              <img id="feature-shot" src="/assets/img/screen-day.webp" alt="A day in Mangio: calories, carbs, protein and fat against the day's goals, water, and breakfast." width="720" height="1520" loading="lazy">
+              <img class="frame" src="/assets/img/pixel9-frame.webp" alt="" width="600" height="1268">
+              <img class="screen" id="feature-shot" src="/assets/img/screen-day.webp" alt="A day in Mangio: calories, carbs, protein and fat against the day's goals, water, and breakfast." width="720" height="1616" loading="lazy">
+              <img class="mask" src="/assets/img/pixel9-mask.webp" alt="" width="541" height="1214">
+            </div>
+            <div class="span-switch" role="group" aria-label="Time span shown in Stats" hidden>
+              <button type="button" aria-pressed="false" data-src="/assets/img/screen-stats-7.webp" data-alt="Stats over the last 7 days: water and calories for each day, and the weight trend over 30 days.">7 days</button>
+              <button type="button" aria-pressed="true" data-src="/assets/img/screen-stats-90.webp" data-alt="Stats over the last 3 months: the weight trend, and water and calories for each of the last 90 days.">3 months</button>
             </div>
           </div>
           <ul class="feature-list" role="tablist" aria-label="Features">
@@ -159,11 +169,11 @@
             </li>
             <li>
               <button class="feature-tab" role="tab" aria-selected="false" aria-controls="feature-shot"
-                      data-src="/assets/img/screen-stats.webp"
-                      data-alt="Stats: the weight trend over 30 days, and water and calories for each day of the week.">
+                      data-src="/assets/img/screen-stats-90.webp" data-trends
+                      data-alt="Stats over the last 3 months: the weight trend, and water and calories for each of the last 90 days.">
                 <span class="num">03</span>
                 <h3>Follow your trends</h3>
-                <p>Your weight trend, water and calories over the past week or month, in Stats.</p>
+                <p>Water and calories from the last 7 days to the last 3 months, and your weight trend over up to six months, in Stats.</p>
               </button>
             </li>
           </ul>
@@ -204,19 +214,28 @@
         <div class="foods-panel reveal">
           <div>
             <span class="eyebrow">Foods you actually eat</span>
-            <h2 id="foods-title">1,235 foods, measured by national food tables.</h2>
-            <p class="lead" style="margin-top:18px">Every built-in food comes from a public nutrient table, with servings the way people eat them: staples and everyday dishes from the United States, the United Kingdom, Germany, Austria, France, Italy and Brazil. They are on your phone, so search works offline.</p>
+            <h2 id="foods-title">1,235 foods, curated one by one.</h2>
+            <p class="lead" style="margin-top:18px">The built-in foods are not a copy of a national table. Each one was chosen for the meals people eat in the United States, the United Kingdom, Germany, Austria, France, Italy and Brazil, taken from the best public nutrient table for it, then checked and completed one food at a time. They are on your phone, so search works offline.</p>
+            <ul class="curation">
+              <li><svg class="c-carbs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="7.5" rx="4" ry="5"/><path d="M12 12.5V21"/></svg><span><strong>Servings the way people eat them.</strong> One apple, a spoon of oil, a glass of milk in Italy, a cup of rice in the United States. Each serving is weighed from USDA's household measures, a country's own book of portions or its national guidelines.</span></li>
+              <li><svg class="c-protein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span><strong>Gaps filled, never guessed.</strong> When a table did not measure a nutrient, another table that measured the same food fills it in. A value nobody measured is never written as zero, and the app tells you when a food's data is partial.</span></li>
+              <li><svg class="c-calories" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span><strong>Honest about precision.</strong> An apple is measured. A croissant is a typical recipe. A pizza is an estimate, because it changes from one kitchen to the next. Each food says which.</span></li>
+              <li><svg class="c-water" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span><strong>Found by the words you use.</strong> Everyday and regional names find the food, and typos are corrected.</span></li>
+            </ul>
           </div>
-          <ul class="sources" aria-label="Nutrient sources">
-            <li>USDA FoodData Central <span>· US</span></li>
-            <li>CoFID <span>· UK</span></li>
-            <li>Ciqual 2025 <span>· France</span></li>
-            <li>BLS 4.0 <span>· Germany</span></li>
-            <li>TACO 4 <span>· Brazil</span></li>
-            <li>Swiss Food Composition Database</li>
-            <li>Swedish Food Agency</li>
-            <li>Open Food Facts <span>· packaged foods</span></li>
-          </ul>
+          <div class="foods-side">
+            <h3>Nutrient sources</h3>
+            <ul class="sources" aria-label="Nutrient sources">
+              <li>USDA FoodData Central <span>· US</span></li>
+              <li>CoFID <span>· UK</span></li>
+              <li>Ciqual 2025 <span>· France</span></li>
+              <li>BLS 4.0 <span>· Germany</span></li>
+              <li>TACO 4 <span>· Brazil</span></li>
+              <li>Swiss Food Composition Database</li>
+              <li>Swedish Food Agency</li>
+            </ul>
+            <p>Packaged foods come from Open Food Facts when you scan a barcode, and you can add your own foods.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -251,7 +270,8 @@
             </ul>
           </article>
           <article class="card plan premium reveal">
-            <span class="tag">Premium</span>
+            <svg class="diamond-big" viewBox="0 0 24 24" fill="none" stroke="#f2ad24" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/></svg>
+            <span class="tag"><svg class="diamond" viewBox="0 0 24 24" fill="none" stroke="#f2ad24" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/></svg>Premium</span>
             <h3>Mangio Premium</h3>
             <p>For when you want to understand the numbers over time.</p>
             <ul>
@@ -276,6 +296,13 @@
           <details>
             <summary>Is Mangio free?</summary>
             <div class="answer"><p>Yes. The diary, the built-in foods, barcode scanning, recipes, and backup and restore are free. Premium adds deeper analysis and removes the ads.</p></div>
+          </details>
+          <details>
+            <summary>Where do the nutrition values come from?</summary>
+            <div class="answer">
+              <p>The 1,235 built-in foods come from public national tables: USDA FoodData Central, CoFID, Ciqual, BLS, TACO, and the Swiss and Swedish databases. Each food was checked one by one, given servings the way people eat it in each country, and completed from another table where one measured what the first did not.</p>
+              <p>Packaged foods come from Open Food Facts when you scan a barcode, and you can add your own foods.</p>
+            </div>
           </details>
           <details>
             <summary>Do I need an account?</summary>
@@ -335,7 +362,7 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="/" aria-label="Mangio home">
-            <svg viewBox="6 10 226 76" aria-hidden="true"><use href="#wordmark"/></svg>
+            <svg viewBox="6 9 226 84" aria-hidden="true"><use href="#wordmark"/></svg>
           </a>
           <p>A simple, private food and water diary for Android.</p>
         </div>

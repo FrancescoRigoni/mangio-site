@@ -13,18 +13,36 @@
   // Feature list switches the phone's screenshot.
   var shot = document.getElementById("feature-shot");
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".feature-tab"));
+  var spanSwitch = document.querySelector(".span-switch");
+  var spanButtons = spanSwitch ? Array.prototype.slice.call(spanSwitch.querySelectorAll("button")) : [];
+  function show(src, alt) {
+    if (!shot || shot.getAttribute("src") === src) return;
+    shot.style.opacity = "0";
+    setTimeout(function () {
+      shot.src = src;
+      shot.alt = alt;
+      shot.style.opacity = "1";
+    }, 180);
+  }
+  function pressSpan(button) {
+    spanButtons.forEach(function (b) { b.setAttribute("aria-pressed", b === button ? "true" : "false"); });
+    show(button.dataset.src, button.dataset.alt);
+  }
+  spanButtons.forEach(function (b) {
+    b.addEventListener("click", function () { pressSpan(b); });
+  });
   function select(tab) {
     tabs.forEach(function (t) {
       t.setAttribute("aria-selected", t === tab ? "true" : "false");
       t.tabIndex = t === tab ? 0 : -1;
     });
-    if (!shot || shot.getAttribute("src") === tab.dataset.src) return;
-    shot.style.opacity = "0";
-    setTimeout(function () {
-      shot.src = tab.dataset.src;
-      shot.alt = tab.dataset.alt;
-      shot.style.opacity = "1";
-    }, 180);
+    var trends = tab.hasAttribute("data-trends");
+    if (spanSwitch) spanSwitch.hidden = !trends;
+    if (trends) {
+      var pressed = spanButtons.filter(function (b) { return b.getAttribute("aria-pressed") === "true"; })[0];
+      if (pressed) { show(pressed.dataset.src, pressed.dataset.alt); return; }
+    }
+    show(tab.dataset.src, tab.dataset.alt);
   }
   tabs.forEach(function (tab, i) {
     tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
@@ -41,7 +59,7 @@
     });
   });
   // Warm the cache so switching is instant.
-  tabs.forEach(function (t) { var img = new Image(); img.src = t.dataset.src; });
+  tabs.concat(spanButtons).forEach(function (t) { var img = new Image(); img.src = t.dataset.src; });
 
   // Reveal sections as they scroll in.
   var items = document.querySelectorAll(".reveal");
