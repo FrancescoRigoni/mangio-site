@@ -783,6 +783,88 @@ p {
   }
 }
 
+/* Private by design */
+.promises {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .promises {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .promises {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sends {
+  margin-top: 16px;
+  display: grid;
+  gap: 20px;
+  border-color: rgba(143, 120, 255, 0.28);
+  background:
+    radial-gradient(70% 120% at 0% 0%, rgba(143, 120, 255, 0.12), transparent 70%),
+    var(--surface-soft);
+}
+
+.sends h3 {
+  font-size: 1.5rem;
+}
+
+.sends-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sends-link::after {
+  content: " →";
+}
+
+.sends ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.sends li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.sends li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fat);
+}
+
+.sends li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .sends {
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    padding: 36px;
+  }
+}
+
 /* Food sources */
 .sources {
   display: flex;
