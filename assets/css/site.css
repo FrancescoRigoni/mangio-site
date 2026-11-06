@@ -754,6 +754,35 @@ p {
   margin-top: 6px;
 }
 
+/* The widgets card spans the grid, with the Today widget beside its text */
+.also .card.wide {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 22px;
+  align-items: center;
+}
+
+.widget-shot {
+  width: 100%;
+  max-width: 476px;
+  height: auto;
+  justify-self: center;
+  border-radius: 6.7% / 11.3%;
+  box-shadow: 0 20px 50px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(225, 225, 228, 0.06);
+}
+
+@media (min-width: 760px) {
+  .also .card.wide {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    padding: 32px;
+  }
+
+  .widget-shot {
+    justify-self: end;
+  }
+}
+
 /* Food sources */
 .sources {
   display: flex;
