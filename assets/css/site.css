@@ -383,6 +383,12 @@ p {
   color: var(--primary);
 }
 
+.hero h1 .h1-coda {
+  display: block;
+  margin-top: 0.12em;
+  color: var(--muted);
+}
+
 .lead {
   font-size: 18px;
   color: var(--muted);
